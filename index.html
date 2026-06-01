@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Definitivo - Registro de Marca e Patente</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <style>
+    :root {
+        --gold: #C9A84C;
+        --gold-light: #E8C96A;
+        --gold-pale: #F5E6BC;
+        --cream: #FAF6EE;
+        --dark: #0D0B08;
+        --dark-2: #171410;
+        --dark-3: #211E18;
+        --dark-4: #2C2820;
+        --text-muted: #8A7F6E;
+        --text-body: #D4C9B5;
+        --green: #2ECC71;
+        --green-dark: #27AE60;
+        --font-display: 'Cormorant Garamond', Georgia, serif;
+        --font-body: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: var(--font-body);
+        background: var(--dark);
+        color: var(--text-body);
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.4;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+        position: relative;
+        z-index: 1;
+    }
+
+    section { position: relative; }
+
+    /* ─── GOLD LINE DIVIDER ─── */
+    .gold-rule {
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        margin: 0 auto 24px;
+    }
+
+    /* ─── BADGE ─── */
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(201,168,76,0.08);
+        border: 1px solid rgba(201,168,76,0.3);
+        color: var(--gold-light);
+        padding: 6px 18px;
+        border-radius: 100px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 28px;
+    }
+    .badge::before {
+        content: '';
+        width: 6px; height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+        font-family: var(--font-body);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1 {
+        font-family: var(--font-display);
+        font-size: clamp(38px, 6vw, 68px);
+        font-weight: 700;
+        line-height: 1.1;
+        color: #fff;
+        letter-spacing: -0.5px;
+    }
+    h1 em {
+        font-style: italic;
+        color: var(--gold-light);
+    }
+
+    h2 {
+        font-family: var(--font-display);
+        font-size: clamp(28px, 4vw, 44px);
+        font-weight: 700;
+        line-height: 1.2;
+        color: #fff;
+        letter-spacing: -0.3px;
+    }
+
+    h3 {
+        font-family: var(--font-display);
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    /* ─── CTA BUTTON ─── */
+    .btn-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #D4AA50 0%, #B8892A 100%);
+        color: #0D0B08;
+        font-family: var(--font-body);
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        padding: 14px 36px;
+        border-radius: 100px;
+        border: 1.5px solid rgba(255,210,100,0.6);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+        box-shadow:
+            0 0 0 4px rgba(201,168,76,0.12),
+            0 6px 24px rgba(201,168,76,0.25);
+    }
+    .btn-cta::before {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 60%; height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+        transition: left 0.5s ease;
+        pointer-events: none;
+    }
+    .btn-cta:hover::before { left: 160%; }
+    .btn-cta:hover {
+        transform: translateY(-2px);
+        box-shadow:
+            0 0 0 6px rgba(201,168,76,0.18),
+            0 12px 36px rgba(201,168,76,0.35);
+        background: linear-gradient(135deg, #E0BA62 0%, #C4972E 100%);
+    }
+    .btn-cta:active { transform: translateY(1px); }
+    .btn-cta .arrow {
+        width: 22px; height: 22px;
+        background: rgba(0,0,0,0.12);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 9px;
+        transition: transform 0.3s;
+        flex-shrink: 0;
+    }
+    .btn-cta:hover .arrow { transform: translateX(3px); }
+
+    .btn-cta.full { width: 100%; font-size: 13px; padding: 16px; }
+
+    /* ─── SECURE BADGE ─── */
+    .secure-note {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        color: var(--text-muted);
+        font-size: 12px;
+        margin-top: 14px;
+    }
+    .secure-note i { color: var(--gold); font-size: 11px; }
+
+    /* ════════════════════════════
+       HERO
+    ════════════════════════════ */
+    #hero {
+        padding: 100px 0 80px;
+        background-color: var(--dark);
+        background-image:
+            linear-gradient(rgba(201,168,76,0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(201,168,76,0.07) 1px, transparent 1px),
+            linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+        background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+        background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+        overflow: hidden;
+    }
+
+    /* Fade out grid at bottom */
+    #hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(13,11,8,0) 0%, var(--dark) 80%),
+            radial-gradient(ellipse 60% 50% at 50% 100%, var(--dark) 20%, transparent 80%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    #hero::after {
+        content: '';
+        position: absolute;
+        top: -100px; left: 50%; transform: translateX(-50%);
+        width: 700px; height: 600px;
+        background: radial-gradient(ellipse, rgba(201,168,76,0.10) 0%, transparent 65%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .hero-inner {
+        text-align: center;
+        max-width: 820px;
+        margin: 0 auto;
+    }
+
+    .hero-inner p.lead {
+        font-size: 18px;
+        color: var(--text-body);
+        line-height: 1.7;
+        margin: 20px auto 36px;
+        max-width: 680px;
+    }
+
+    .hero-inner p.lead strong {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .hero-book-img {
+        max-width: 300px;
+        margin: 40px auto 48px;
+        filter: drop-shadow(0 20px 60px rgba(201,168,76,0.2));
+        animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    /* ─── STRIP / SOCIAL PROOF ─── */
+    .strip {
+        background: var(--dark-3);
+        border-top: 1px solid rgba(201,168,76,0.12);
+        border-bottom: 1px solid rgba(201,168,76,0.12);
+        padding: 16px 0;
+    }
+
+    .strip-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .strip-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-body);
+    }
+    .strip-item i { color: var(--gold); font-size: 16px; }
+
+    /* ════════════════════════════
+       BENEFITS
+    ════════════════════════════ */
+    #benefits {
+        padding: 90px 0;
+        background: var(--dark-2);
+    }
+
+    .benefits-header {
+        text-align: center;
+        margin-bottom: 64px;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 24px;
+        background: var(--dark-3);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 8px;
+        transition: border-color 0.3s, transform 0.3s;
+    }
+    .benefit-item:hover {
+        border-color: rgba(201,168,76,0.25);
+        transform: translateY(-3px);
+    }
+
+    .benefit-icon {
+        width: 44px; height: 44px; flex-shrink: 0;
+        background: rgba(201,168,76,0.08);
+        border: 1px solid rgba(201,168,76,0.2);
+        border-radius: 8px;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--gold);
+        font-size: 18px;
+    }
+
+    .benefit-item h4 {
+        font-family: var(--font-body);
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 4px;
+    }
+    .benefit-item p {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+    /* ════════════════════════════
+       AUDIENCE
+    ════════════════════════════ */
+    #audience {
+        padding: 90px 0;
+        background: var(--dark);
+    }
+
+    .audience-header { text-align: center; margin-bottom: 60px; }
+
+    .audience-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .audience-card {
+        background: var(--dark-3);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 10px;
+        padding: 32px 24px;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: default;
+    }
+    .audience-card:hover {
+        border-color: rgba(201,168,76,0.3);
+        background: var(--dark-4);
+        transform: translateY(-4px);
+    }
+
+    .audience-icon {
+        width: 56px; height: 56px;
+        background: rgba(201,168,76,0.07);
+        border: 1px solid rgba(201,168,76,0.15);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 22px;
+        color: var(--gold);
+        transition: background 0.3s;
+    }
+    .audience-card:hover .audience-icon {
+        background: rgba(201,168,76,0.14);
+    }
+
+    .audience-card h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    .audience-card p {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+
+    /* ════════════════════════════
+       TESTIMONIALS
+    ════════════════════════════ */
+    #testimonials {
+        padding: 90px 0;
+        background: var(--dark-2);
+    }
+
+    .testimonials-header { text-align: center; margin-bottom: 60px; }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .testimonial-card {
+        background: var(--dark-3);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 10px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: border-color 0.3s;
+    }
+    .testimonial-card:hover { border-color: rgba(201,168,76,0.2); }
+
+    .stars {
+        display: flex;
+        gap: 3px;
+        color: var(--gold);
+        font-size: 13px;
+    }
+
+    .testimonial-text {
+        font-size: 14px;
+        color: var(--text-body);
+        line-height: 1.7;
+        font-style: italic;
+        flex: 1;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .author-avatar {
+        width: 46px; height: 46px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(201,168,76,0.3);
+    }
+
+    .author-placeholder {
+        width: 46px; height: 46px;
+        border-radius: 50%;
+        background: var(--dark-4);
+        border: 2px solid rgba(201,168,76,0.25);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--gold);
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .author-info strong {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+    }
+    .author-info span {
+        font-size: 12px;
+        color: var(--text-muted);
+    }
+
+    /* ════════════════════════════
+       OFFER / PRICING
+    ════════════════════════════ */
+    #comprar {
+        padding: 90px 0;
+        background: var(--dark);
+        overflow: hidden;
+    }
+
+    #comprar::before {
+        content: '';
+        position: absolute;
+        bottom: -200px; left: 50%; transform: translateX(-50%);
+        width: 600px; height: 600px;
+        background: radial-gradient(ellipse, rgba(46,204,113,0.04) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .offer-header { text-align: center; margin-bottom: 56px; }
+    .offer-header p {
+        color: var(--text-muted);
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    .offer-card {
+        max-width: 520px;
+        margin: 0 auto;
+        background: var(--dark-3);
+        border: 1px solid rgba(201,168,76,0.25);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 0 80px rgba(201,168,76,0.06);
+    }
+
+    .offer-card-header {
+        background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04));
+        border-bottom: 1px solid rgba(201,168,76,0.15);
+        padding: 28px 36px;
+        text-align: center;
+    }
+
+    .offer-card-header h3 {
+        font-family: var(--font-display);
+        font-size: 26px;
+        color: var(--gold-light);
+    }
+
+    .offer-card-body { padding: 36px; }
+
+    .offer-items {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 32px;
+    }
+
+    .offer-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 16px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.04);
+        border-radius: 6px;
+    }
+    .offer-item i {
+        color: var(--gold);
+        font-size: 14px;
+        margin-top: 2px;
+        flex-shrink: 0;
+    }
+    .offer-item i.fa-gift { color: #8A7FD4; }
+    .offer-item span {
+        font-size: 14px;
+        color: var(--text-body);
+        line-height: 1.5;
+    }
+    .offer-item span b { color: #fff; }
+
+    .price-box {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 10px;
+        padding: 24px;
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .price-from {
+        font-size: 14px;
+        color: var(--text-muted);
+        text-decoration: line-through;
+        margin-bottom: 4px;
+    }
+    .price-label {
+        font-size: 12px;
+        color: var(--gold);
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+    }
+    .price-amount {
+        font-family: var(--font-display);
+        font-size: 72px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+    }
+    .price-amount sup {
+        font-size: 28px;
+        vertical-align: super;
+        color: var(--text-body);
+        font-weight: 400;
+    }
+    .price-amount sub {
+        font-size: 22px;
+        vertical-align: sub;
+        color: var(--text-body);
+        font-weight: 400;
+    }
+
+    .installment-note {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 8px;
+    }
+
+    /* ════════════════════════════
+       FAQ
+    ════════════════════════════ */
+    #faq {
+        padding: 90px 0;
+        background: var(--dark-2);
+    }
+
+    .faq-header { text-align: center; margin-bottom: 56px; }
+
+    .faq-list {
+        max-width: 760px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .faq-item {
+        background: var(--dark-3);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: border-color 0.3s;
+    }
+    .faq-item.open { border-color: rgba(201,168,76,0.2); }
+
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+        user-select: none;
+        gap: 16px;
+        transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--gold-light); }
+
+    .faq-toggle {
+        width: 28px; height: 28px; flex-shrink: 0;
+        background: rgba(201,168,76,0.08);
+        border: 1px solid rgba(201,168,76,0.15);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--gold);
+        font-size: 10px;
+        transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-toggle {
+        transform: rotate(180deg);
+        background: rgba(201,168,76,0.15);
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.3s;
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.7;
+        padding: 0 24px;
+    }
+    .faq-answer.open {
+        max-height: 300px;
+        padding: 0 24px 20px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+        background: var(--dark);
+        border-top: 1px solid rgba(255,255,255,0.05);
+        padding: 28px 0;
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 12px;
+        color: var(--text-muted);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 991px) {
+        .audience-grid { grid-template-columns: repeat(2, 1fr); }
+        .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+        #hero { padding: 70px 0 60px; }
+        .benefits-grid { grid-template-columns: 1fr; }
+        .strip-inner { gap: 20px; }
+        .testimonials-grid { grid-template-columns: 1fr; }
+        .audience-grid { grid-template-columns: 1fr; }
+        .offer-card-body { padding: 24px 20px; }
+    }
+    @media (max-width: 480px) {
+        .strip-inner { gap: 14px; }
+        .strip-item { font-size: 11px; }
+    }
+    </style>
+</head>
+<body>
+
+<!-- ════ HERO ════ -->
+<section id="hero">
+    <div class="container">
+        <div class="hero-inner fade-in">
+            <div class="badge">O Guia Definitivo e Atualizado</div>
+            <h1>Proteja o Maior Patrimônio<br>do seu Negócio: <em>Sua Marca.</em></h1>
+            <p class="lead">
+                Aprenda o passo a passo exato para registrar sua Marca e Patente no INPI de forma segura, rápida e <strong>sem gastar fortunas com advogados ou assessorias.</strong>
+            </p>
+            <img src="logo-ebook.webp" alt="Guia Definitivo de Registro de Marca" class="hero-book-img">
+            <a href="#comprar" class="btn-cta">
+                Quero Proteger Minha Marca <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+            </a>
+            <p class="secure-note"><i class="fas fa-lock"></i> Pagamento 100% Seguro &nbsp;·&nbsp; <i class="fas fa-bolt"></i> Acesso Imediato</p>
+        </div>
+    </div>
+</section>
+
+<!-- ════ STRIP ════ -->
+<div class="strip">
+    <div class="container">
+        <div class="strip-inner">
+            <div class="strip-item"><i class="fas fa-check-circle"></i> Sem Juridiquês</div>
+            <div class="strip-item"><i class="fas fa-check-circle"></i> Passo a Passo com Prints</div>
+            <div class="strip-item"><i class="fas fa-check-circle"></i> Para Leigos e Iniciantes</div>
+            <div class="strip-item"><i class="fas fa-check-circle"></i> Economize Até R$ 3.000</div>
+        </div>
+    </div>
+</div>
+
+<!-- ════ BENEFITS ════ -->
+<section id="benefits">
+    <div class="container">
+        <div class="benefits-header fade-in">
+            <span class="section-label">Por que você precisa</span>
+            <span class="gold-rule"></span>
+            <h2>O que você vai dominar<br>com este guia</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-item fade-in">
+                <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                    <h4>Evite Processos Judiciais</h4>
+                    <p>Impeça que terceiros roubem ou copiem o nome da sua empresa legalmente.</p>
+                </div>
+            </div>
+            <div class="benefit-item fade-in">
+                <div class="benefit-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <div>
+                    <h4>Economia Real de Até R$ 3.000</h4>
+                    <p>Assessorias cobram de R$ 1.500 a R$ 3.000. Você fará isso pagando apenas as taxas do governo.</p>
+                </div>
+            </div>
+            <div class="benefit-item fade-in">
+                <div class="benefit-icon"><i class="fas fa-search"></i></div>
+                <div>
+                    <h4>Busca de Viabilidade</h4>
+                    <p>Aprenda o método correto para saber se sua marca já existe antes de tentar registrar.</p>
+                </div>
+            </div>
+            <div class="benefit-item fade-in">
+                <div class="benefit-icon"><i class="fas fa-mouse-pointer"></i></div>
+                <div>
+                    <h4>Telas do INPI Explicadas</h4>
+                    <p>Clique a clique, com prints reais do sistema. Feito especialmente para leigos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ AUDIENCE ════ -->
+<section id="audience">
+    <div class="container">
+        <div class="audience-header fade-in">
+            <span class="section-label">Para quem é</span>
+            <span class="gold-rule"></span>
+            <h2>Este material foi feito para você?</h2>
+        </div>
+        <div class="audience-grid fade-in">
+            <div class="audience-card">
+                <div class="audience-icon"><i class="fas fa-store"></i></div>
+                <h4>Empreendedores</h4>
+                <p>Donos de negócios físicos ou digitais que querem profissionalizar e blindar sua empresa.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon"><i class="fas fa-lightbulb"></i></div>
+                <h4>Inventores e Criadores</h4>
+                <p>Pessoas com ideias inovadoras ou produtos únicos que precisam de proteção de patente.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon"><i class="fas fa-laptop-code"></i></div>
+                <h4>Agências e Freelancers</h4>
+                <p>Profissionais que desejam oferecer o registro como um serviço extra aos clientes.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon"><i class="fas fa-user-tie"></i></div>
+                <h4>Profissionais Liberais</h4>
+                <p>Médicos, dentistas, arquitetos e advogados que usam seus próprios nomes como marca forte.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ TESTIMONIALS ════ -->
+<section id="testimonials">
+    <div class="container">
+        <div class="testimonials-header fade-in">
+            <span class="section-label">Depoimentos</span>
+            <span class="gold-rule"></span>
+            <h2>Quem já protegeu sua marca aprova</h2>
+        </div>
+        <div class="testimonials-grid fade-in">
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Eu estava com medo de perder o nome da minha loja porque recebi uma notificação. Comprei o guia, fiz a busca e consegui dar entrada no INPI na mesma semana. Economizei mais de 2 mil reais com advogados!"</p>
+                <div class="testimonial-author">
+                    <div class="author-placeholder">J</div>
+                    <div class="author-info">
+                        <strong>João Martins</strong>
+                        <span>Dono de E-commerce</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"O sistema do governo parece um bicho de sete cabeças, mas o e-book mostra exatamente onde clicar. Consegui o deferimento da minha marca sem complicação nenhuma. Recomendo demais."</p>
+                <div class="testimonial-author">
+                    <div class="author-placeholder">C</div>
+                    <div class="author-info">
+                        <strong>Carla Menezes</strong>
+                        <span>Empreendedora Local</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Comprei para registrar a minha agência e o material é tão bom que agora uso o passo a passo para cobrar e registrar as marcas dos meus clientes. Se pagou dezenas de vezes."</p>
+                <div class="testimonial-author">
+                    <div class="author-placeholder">J</div>
+                    <div class="author-info">
+                        <strong>Junior Braga</strong>
+                        <span>Agência de Marketing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ OFFER / PRICING ════ -->
+<section id="comprar">
+    <div class="container">
+        <div class="offer-header fade-in">
+            <span class="section-label">Oferta Especial</span>
+            <span class="gold-rule"></span>
+            <h2>Tudo que você vai receber</h2>
+            <p>Acesso imediato por tempo limitado</p>
+        </div>
+        <div class="offer-card fade-in">
+            <div class="offer-card-header">
+                <h3>Guia Completo + Bônus Exclusivos</h3>
+            </div>
+            <div class="offer-card-body">
+                <div class="offer-items">
+                    <div class="offer-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><b>Guia para Registro:</b> Passo a passo completo do Registro de Marca no INPI.</span>
+                    </div>
+                    <div class="offer-item">
+                        <i class="fas fa-gift"></i>
+                        <span><b>Bônus 1:</b> Lista Auxiliar de Classes do INPI de Serviços</span>
+                    </div>
+                    <div class="offer-item">
+                        <i class="fas fa-gift"></i>
+                        <span><b>Bônus 2:</b> Lista Auxiliar de Classes do INPI de Produtos</span>
+                    </div>
+                    <div class="offer-item">
+                        <i class="fas fa-gift"></i>
+                        <span><b>Bônus 3:</b> 10 Passos para o Registro da sua Marca</span>
+                    </div>
+                </div>
+
+                <div class="price-box">
+                    <p class="price-from">De R$ 297,00</p>
+                    <p class="price-label">Por apenas</p>
+                    <div class="price-amount"><sup>R$</sup>97<sub>,00</sub></div>
+                    <p class="installment-note">Pagamento único · Acesso vitalício</p>
+                </div>
+
+                <a href="COLOQUE_SEU_LINK_DE_CHECKOUT_AQUI" class="btn-cta full">
+                    Comprar Agora <span class="arrow"><i class="fas fa-arrow-right"></i></span>
+                </a>
+                <p class="secure-note"><i class="fas fa-lock"></i> Ambiente 100% Seguro &nbsp;·&nbsp; <i class="fas fa-bolt"></i> Acesso Imediato após Pagamento</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section id="faq">
+    <div class="container">
+        <div class="faq-header fade-in">
+            <span class="section-label">Dúvidas</span>
+            <span class="gold-rule"></span>
+            <h2>Perguntas Frequentes</h2>
+        </div>
+        <div class="faq-list fade-in">
+            <div class="faq-item">
+                <div class="faq-question">
+                    Preciso ter CNPJ para registrar uma marca?
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Não! Você pode registrar uma marca no INPI usando o seu CPF como Pessoa Física, desde que comprove que exerce a atividade licitamente. O guia explica como fazer isso.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Vou ter que pagar outras taxas além do e-book?
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Sim. O INPI (Governo) cobra taxas federais obrigatórias para dar entrada no processo (em média R$ 440,00 para MEI/PF) e para emissão do certificado. No e-book explicamos exatamente quais são essas taxas e como gerar as guias.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Como vou receber o material?
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Assim que o pagamento for confirmado, você receberá um e-mail com o link para baixar o E-book em PDF e todos os bônus inclusos imediatamente.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    E se eu não entender algo do guia?
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    O material foi escrito com linguagem simples, sem "juridiquês", e com prints de tela mostrando exatamente onde clicar. É feito especialmente para iniciantes.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+    <div class="container">
+        <p>© 2026 Todos os direitos reservados. Este site não faz parte do site do Facebook, Google ou INPI.</p>
+    </div>
+</footer>
+
+<script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            const answer = q.nextElementSibling;
+            const isOpen = item.classList.contains('open');
+
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-answer').classList.remove('open');
+            });
+
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.classList.add('open');
+            }
+        });
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+<script>
+  window.pixelId = "6910c3d21f01b7cc0700ac1a";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+</body>
+</html>
